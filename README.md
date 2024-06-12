@@ -3,7 +3,7 @@
 ## Back Ground. 
 #### When I go to my campus, I usually research the path by Google Map. However, this does not make the actuall shortest path. Thus, I decided to do this project in order to make my life easier.  
 ## Description  
-#### I apply Dijkstra algorithm with binary heap to obtain the result. Let us consider that G is the directed weighted graph and ```G(E,V)```, for all edges in E and virtices in V. In binary heap, Insert/decreaseKey operation takes ```O(log |V|)``` and delete the smallest number from this heap takes ```O(|V|)```. Thus, this algorithm totally takes ```O((|E| + |V|)log|V|). We assume that Vertices are Listopadu (starting vertex), Mara Strana (goal vertex), bus stops, stations, ,and metros. Also, weight is the costs which are by walks, buses, metro, trams, and waiting time. We can see visually the whole graph below as a picture.  
+#### I apply Dijkstra algorithm with binary heap to obtain the result. Let us consider that G is the directed weighted graph and ```G(E,V)```, for all edges in E and virtices in V. In binary heap, Insert/decreaseKey operation takes ```O(log |V|)``` and delete the smallest number from this heap takes ```O(|V|)```. Thus, this algorithm totally takes ```O((|E| + |V|)log|V|)```. We assume that Vertices are Listopadu (starting vertex), Mara Strana (goal vertex), bus stops, stations, ,and metros. Also, weight is the costs which are by walks, buses, metro, trams, and waiting time. We can see visually the whole graph below as a picture.  
 ## How to Run this code  
 #### We simply do ```dotnet run``` of Program.cs on the terminal in the currect directory. Please make sure you download all the text files.
 ```
