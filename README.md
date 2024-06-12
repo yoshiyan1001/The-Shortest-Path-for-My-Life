@@ -5,7 +5,7 @@
 ## Description  
 #### I apply Dijkstra algorithm with binary heap to obtain the result. Let us consider that G is the directed weighted graph and ```G(E,V)```, for all edges in E and virtices in V. In binary heap, Insert/decreaseKey operation takes ```O(log |V|)``` and delete the smallest number from this heap takes ```O(|V|)```. We assume that Vertices are Listopadu (starting vertex), Mara Strana (goal vertex), bus stops, stations, ,and metros. Also, weight is the costs which are by walks, buses, metro, trams, and waiting time. We can see visually the whole graph below as a picture.  
 ## How to Run this code  
-#### We simply do ```dotnet run``` on the terminal in the currect directory. Please make sure you download all the text files.
+#### We simply do ```dotnet run``` of Program.cs on the terminal in the currect directory. Please make sure you download all the text files.
 ```
 Listopadu, 14 : 56 ---> Tram_17, 15 : 10 ---> Tram_15,  15 : 24 ---> Mala_Strana. Arrive time is 15 : 28
 total weight is 39
