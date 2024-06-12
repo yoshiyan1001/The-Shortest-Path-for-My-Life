@@ -1,0 +1,16 @@
+15
+Listopadu Bus_187 Bus_201 Tram_17 
+Tram_17 Tram_15
+Tram_15 Mala_Strana
+Bus_187 Nádraží_Holešovice
+Bus_201 Nádraží_Holešovice
+Nádraží_Holešovice Red_Metro
+Red_Metro Museum
+Museum Green_Metro
+Green_Metro Malostranska
+Malostranska mTram_15 Tram_20 Tram_22 Tram_23
+mTram_15 Mala_Strana
+Tram_20 Mala_Strana
+Tram_22 Mala_Strana
+Tram_23 Mala_Strana
+Mala_Strana
