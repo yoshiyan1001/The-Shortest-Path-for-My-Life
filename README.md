@@ -4,12 +4,35 @@
 #### When I go to my campus, I usually research the path by Google Map. However, this does not make the actuall shortest path. Thus, I decided to do this project in order to make my life easier.  
 ## Description  
 #### I apply Dijkstra algorithm with binary heap to obtain the result. Let us consider that G is the directed weighted graph and ```G(E,V)```, for all edges in E and virtices in V. In binary heap, Insert/decreaseKey operation takes ```O(log |V|)``` and delete the smallest number from this heap takes ```O(|V|)```. Thus, this algorithm totally takes ```O((|E| + |V|)log|V|)```. We assume that Vertices are Listopadu (starting vertex), Mara Strana (goal vertex), bus stops, stations, ,and metros. Also, weight is the costs which are by walks, buses, metro, trams, and waiting time. We can see visually the whole graph below as a picture.  
-## How to Run this code  
-#### We simply do ```dotnet run``` of Program.cs on the terminal in the currect directory. Please make sure you download all the text files.
+# How to work this project.
+### There are two cases that we can run this project
+### First, we can simply run the command line
 ```
-Listopadu, 14 : 56 ---> Tram_17, 15 : 10 ---> Tram_15,  15 : 24 ---> Mala_Strana. Arrive time is 15 : 28
-total weight is 39
+dotnet run
 ```
+### Then this code obtains current time and produces the standard output. There is the example below when we run this code at 8 : 30.
+```
+Listopadu, 8 : 32 ---> Tram_17, 8 : 46 ---> Tram_15,  9 : 0 ---> Mala_Strana. Arrive time is 9 : 4
+total weight is 32
+```
+### Second, we pass three tastcases as the first command line argument:```1```, ```2``` or, ```3```.
+### ```dotnet run 1 ``` We check the test case that is 9:00. The result is below.
+```
+Listopadu, 9 : 7 ---> Tram_17, 9 : 21 ---> Tram_15,  9 : 37 ---> Mala_Strana. Arrive time is 9 : 41
+total weight is 34
+```
+### For the testcase ```2```:  this is 10:00, We will obtain the result below.
+```
+Listopadu, 10 : 5 ---> Bus_187, 10 : 10 ---> Nádraží_Holešovice,  10 : 15 ---> Red_Metro,  10 : 20 ---> Museum,  10 : 26 ---> Green_Metro,  10 : 29 ---> Malostranska,  10 : 33 ---> Tram_20,  10 : 35 ---> Mala_Strana. Arrive time is 10 : 38
+total weight is 33
+```
+
+### For the testcase ```3``` : this is 11:00. We will obtain the result below.
+```
+Listopadu, 11 : 7 ---> Tram_17, 11 : 21 ---> Tram_15,  11 : 37 ---> Mala_Strana. Arrive time is 11 : 41
+total weight is 34
+```
+
 #### If you would like to see the detail of the code, I have written them into my code.  
 #### Thank you for reading it. 
 
