@@ -232,7 +232,7 @@ class Schedule
                 public static void printRoot(List<string> root, Graph graph, Time time_manage)
                 {
                     int total_weigth = graph.h["Mala_Strana"] - graph.h["Listopadu"] - (graph.weight[("Listopadu", root[root.Count-1])] - graph.temp_weight[("Listopadu", root[root.Count-1])]);
-                    //WriteLine(graph.weight[("Listopadu", root[root.Count-1])] - graph.temp_weight[("Listopadu", root[root.Count-1])]);
+    
                     
                     if(total_weigth >= 10000)
                     {
@@ -301,35 +301,39 @@ class Schedule
                 
                 public static int checkStation(string node, Schedule schedule, Time time_manage, int weight)
                 {
-                    if(node == "Bus_187") return findNiceSchedule(schedule.bus187_schedule, time_manage, weight, node);
-                    else if(node == "Bus_201") return findNiceSchedule(schedule.bus201_schedule, time_manage, weight, node);
-                    else if(node == "Tram_17") return findNiceSchedule(schedule.tram17_schedule, time_manage, weight, node);
-                    else if(node == "Red_Metro") return findNiceSchedule(schedule.red_metro_schedule, time_manage, weight, node);
-                    else if(node == "Green_Metro") return findNiceSchedule(schedule.green_metro_schedule, time_manage, weight, node);
-                    else if(node == "mTram_15") return findNiceSchedule(schedule.tram15_schedule, time_manage, weight, node);
-                    else if(node == "Tram_20") return findNiceSchedule(schedule.tram20_schedule, time_manage, weight, node);
-                    else if(node == "Tram_22") return findNiceSchedule(schedule.tram22_schedule, time_manage, weight, node);
-                    else if(node == "Tram_23") return findNiceSchedule(schedule.tram23_schedule, time_manage, weight, node);
-                    else if(node == "Tram_15") return findNiceSchedule(schedule.tram15_schedule, time_manage, weight,node);
+                    if(node == "Bus_187") return findNiceSchedule(schedule.bus187_schedule, time_manage, weight);
+                    else if(node == "Bus_201") return findNiceSchedule(schedule.bus201_schedule, time_manage, weight);
+                    else if(node == "Tram_17") return findNiceSchedule(schedule.tram17_schedule, time_manage, weight);
+                    else if(node == "Red_Metro") return findNiceSchedule(schedule.red_metro_schedule, time_manage, weight);
+                    else if(node == "Green_Metro") return findNiceSchedule(schedule.green_metro_schedule, time_manage, weight);
+                    else if(node == "mTram_15") return findNiceSchedule(schedule.tram15_schedule, time_manage, weight);
+                    else if(node == "Tram_20") return findNiceSchedule(schedule.tram20_schedule, time_manage, weight);
+                    else if(node == "Tram_22") return findNiceSchedule(schedule.tram22_schedule, time_manage, weight);
+                    else if(node == "Tram_23") return findNiceSchedule(schedule.tram23_schedule, time_manage, weight);
+                    else if(node == "Tram_15") return findNiceSchedule(schedule.tram15_schedule, time_manage, weight);
                     else return 0;
                 }
                 ///
                 /// In find_nice_schedule function, we check the time schedule of tram, metro, or bus. And return the the nicest time plus weight of the edge. 
                 /// If we cannnot find it, this total weight becomes inifinty.
                 ///
-                public static int findNiceSchedule(Dictionary<int, int[]> way, Time time_manage, int weight, string node)
-                { //memo: the shcedule is not matched with the result. guess timer is somehow wrong
+                public static int findNiceSchedule(Dictionary<int, int[]> way, Time time_manage, int weight)
+                {
                     (int hour, int minute) = time_manage.processTime(weight); //hour, mins
 
                     int[] mins = way[hour];
                     for(int i = 0; i < mins.Length-1; i++)
-                    {
+                    {   
+                        if(i == 0 && minute < mins[i])
+                        {
+                            return mins[i] - minute;
+                        }
                         if(minute == mins[i])
                         {
                             return mins[i] - minute;
                         }
                         if((minute >= mins[i] || minute >= 0)  && minute <= mins[i+1])
-                        {
+                        { 
                             return mins[i+1] - minute;
                         }
                     }

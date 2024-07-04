@@ -18,8 +18,8 @@ total weight is 32
 ### Second, we pass three tastcases as the first command line argument:```1```, ```2``` or, ```3```.
 ### ```dotnet run 1 ``` We check the test case that is 9:00. The result is below.
 ```
-Listopadu, 9 : 7 ---> Tram_17, 9 : 21 ---> Tram_15,  9 : 37 ---> Mala_Strana. Arrive time is 9 : 41
-total weight is 34
+Listopadu, 9 : 5 ---> Bus_187, 9 : 10 ---> Nádraží_Holešovice,  9 : 15 ---> Red_Metro,  9 : 19 ---> Museum,  9 : 25 ---> Green_Metro,  9 : 28 ---> Malostranska,  9 : 32 ---> Tram_22,  9 : 33 ---> Mala_Strana. Arrive time is 9 : 36
+total weight is 31
 ```
 ### For the testcase ```2```:  this is 10:00, We will obtain the result below.
 ```
