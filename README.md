@@ -29,8 +29,8 @@ total weight is 33
 
 ### For the testcase ```3``` : this is 11:00. We will obtain the result below.
 ```
-Listopadu, 11 : 7 ---> Tram_17, 11 : 21 ---> Tram_15,  11 : 37 ---> Mala_Strana. Arrive time is 11 : 41
-total weight is 34
+Listopadu, 11 : 5 ---> Bus_187, 11 : 10 ---> Nádraží_Holešovice,  11 : 15 ---> Red_Metro,  11 : 19 ---> Museum,  11 : 25 ---> Green_Metro,  11 : 29 ---> Malostranska,  11 : 33 ---> Tram_20,  11 : 35 ---> Mala_Strana. Arrive time is 11 : 38
+total weight is 33
 ```
 
 #### If you would like to see the detail of the code, I have written them into my code.  
