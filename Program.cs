@@ -1,8 +1,6 @@
 ﻿using System;
 using static System.Console;    
-enum State{
-    Closed, Open
-}
+
 
 /// 
 /// My project is to compute the shortest cost to go to the Mala Strana campus from Listopadu domitory. We apply Dijkstra algorithm with binary heap.
@@ -49,11 +47,10 @@ class Schedule
     {
         /// <summary>
         /// We suppose the graph is directed and weighted. A node represents where we stop, such as bus stops, statations. The graph is an adjacency matric representation. A edge represents the path between station to station. In this class, we construct the graph from graph_adj.txt, some dictonaries for weight of edges,
-        /// the state of nodes, and temp_weight is initial weight. Dictonary h[node] represents the smallest weight from starting vertex to node.
+        /// , and temp_weight is initial weight. Dictonary h[node] represents the smallest weight from starting vertex to node.
         /// </summary>
         int infinity = 1000000;
         Dictionary<string, string[]> graph = new Dictionary<string, string[]>();
-        Dictionary<string, State> graph_state = new Dictionary<string, State>();
         Dictionary<(string, string), int> weight =  new Dictionary<(string, string), int>();
         Dictionary<(string, string), int> temp_weight =  new Dictionary<(string, string), int>();   
         Dictionary<string, int> h =  new Dictionary<string, int>();
@@ -359,15 +356,10 @@ class Schedule
                     graph.h[start] = 0;
                     heap.addValue((start, graph.h[start]));
 
-                    foreach(string node in graph.graph.Keys)
+                    
+                    while(heap.length != 0)
                     {
-                        graph.graph_state[node] = State.Open;
-                        if(heap.length == 0)
-                        {
-                            List<string> root_a = new List<string>();
-                            makeRoot(goal, graph, root_a, time_manage);
-                            return;
-                        }
+                        
                         (string min_next_node, int node_weight) = heap.removeSmallest();
                         
                         foreach(string neighbor in graph.graph[min_next_node])
@@ -383,7 +375,6 @@ class Schedule
                                 heap.decreaseKey((neighbor, temp));
                             }
                         }
-                        graph.graph_state[node] = State.Closed;
                     }
                     List<string> root = new List<string>();
                     makeRoot(goal, graph, root, time_manage);
